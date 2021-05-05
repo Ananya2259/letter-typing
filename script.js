@@ -10,8 +10,8 @@ function gamestart() {
     let yaxis = 0; //setting the y axis to 0 to make the letterbox drop from the top.
     let clearingtime; //This is the variable in which the id of the set interval will be stored.
     let points = 0;
-    let time = Number(prompt("How many seconds do you want to play")); //Takes the input from the user on how many seconds the user wants to play.
-    let gametime = time; //Gametime variable is used to show the user the bal time.
+    let time = Number(prompt("How many seconds do you want to play -->max:100-->min:10")); //Takes the input from the user on how many seconds the user wants to play.
+    let gametime = time; //Gametime variable is used to show the user the bal timie.
     let speed = 10;
 
     if (time >= 10 && time <= 100) { //The minimum and the maximum time a user shoul play is 10 and 100.
