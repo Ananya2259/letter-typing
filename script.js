@@ -4,7 +4,7 @@ let letterBoxSize = 50;
 let yaxis = 0
 let clearingtime;
 let points = 0;
-let time = Number(prompt("How many minutes do you want to play"));
+let time = Number(prompt("How many seconds do you want to play"));
 let gametime = time;
 
 if (time >= 10 && time <= 100) {
