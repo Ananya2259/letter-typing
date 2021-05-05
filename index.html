@@ -1,20 +1,42 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Lettertyping</title>
-    <style>
-      #letter {
-        margin: 0 auto;
-        border-image: linear-gradient(315deg, #660066 0%, #ff0066 74%);
-        border-image-slice: 1;
-        border-width: 10px;
-        border-style: solid;
-      }
-    </style>
-  </head>
-  <body style="text-align: center">
-    <h1 id="time">Balance time:00</h1>
-    <h1 id="points">points : 0</h1>
-    <canvas id="letter" width="300" height="400"></canvas>
-    <script src="script.js"></script>
-  </body>
+
+<head>
+  <title>Lettertyping</title>
+  <style>
+    #letter {
+      margin: 0 auto;
+      border-image: linear-gradient(315deg, #660066 0%, #ff0066 74%);
+      border-image-slice: 1;
+      border-width: 10px;
+      border-style: solid;
+      display: none;
+    }
+
+    #start {
+      height: 50px;
+      width: 150px;
+      position: relative;
+      top: 300px;
+      color: white;
+      background: #dadce000;
+      border-color: white;
+    }
+  </style>
+</head>
+
+<body style="text-align: center">
+  <h1 id="time" style="display: none">Balance time:00</h1>
+  <h1 id="points" style="display: none">points : 0</h1>
+  <canvas id="letter" width="300" height="400"></canvas>
+  <script src="script.js"></script>
+  <div id="homepage" style="
+        background-image: url(./background.png);
+        height: 600px;
+        width: 100%;
+      ">
+    <button id="start" onclick="gamestart()">START</button>
+  </div>
+</body>
+
 </html>
