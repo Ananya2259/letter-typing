@@ -1,42 +1,91 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Lettertyping</title>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+      }
 
-<head>
-  <title>Lettertyping</title>
-  <style>
-    #letter {
-      margin: 0 auto;
-      border-image: linear-gradient(315deg, #660066 0%, #ff0066 74%);
-      border-image-slice: 1;
-      border-width: 10px;
-      border-style: solid;
-      display: none;
-    }
+      #letter {
+        margin: 0 auto;
+        border-image: linear-gradient(315deg, #660066 0%, #ff0066 74%);
+        border-image-slice: 1;
+        border-width: 10px;
+        border-style: solid;
+        display: none;
+      }
 
-    #start {
-      height: 50px;
-      width: 150px;
-      position: relative;
-      top: 300px;
-      color: white;
-      background: #dadce000;
-      border-color: white;
-    }
-  </style>
-</head>
+      .btn {
+        height: 50px;
+        width: 150px;
+        position: relative;
+        top: 200px;
+        color: white;
+        background: #dadce000;
+        border-color: white;
+        box-shadow: 1px 1px 9px 2px pink;
+      }
 
-<body style="text-align: center">
-  <h1 id="time" style="display: none">Balance time:00</h1>
-  <h1 id="points" style="display: none">points : 0</h1>
-  <canvas id="letter" width="300" height="400"></canvas>
-  <script src="script.js"></script>
-  <div id="homepage" style="
+      #help-text {
+        display: none;
+        color: white;
+      }
+
+      #backbtn {
+        position: relative;
+        left: 500px;
+      }
+
+      #music-on-off {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body style="text-align: center">
+    <h1 id="time" style="display: none">Balance time:00</h1>
+    <canvas id="letter" width="300" height="450"></canvas>
+    <h1 id="points" style="display: none">points : 0</h1>
+    <script src="script.js"></script>
+    <div
+      id="homepage"
+      style="
         background-image: url(./background.png);
-        height: 600px;
+        height: 610px;
         width: 100%;
-      ">
-    <button id="start" onclick="gamestart()">START</button>
-  </div>
-</body>
-
+      "
+    >
+      <div id="btn-div">
+        <button id="start" onclick="gamestart()" class="btn">START</button
+        ><br /><br />
+        <button id="help" onclick="helpText()" class="btn">HELP</button><br />
+        <br />
+        <button id="sound" onclick="startMusic()" class="btn">SOUND</button>
+      </div>
+      <p id="help-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+        distinctio nemo nisi sequi a eligendi, labore adipisci asperiores eum
+        esse in, officiis officia iusto minima repellendus doloremque, corrupti
+        corporis! Officiis?
+      </p>
+      <audio autoplay loop="loop" id="background-music">
+        <source src="./Moonlightsonata.mp3" type="audio/mp3" />
+      </audio>
+      <div id="music-on-off">
+        <span onclick="on()">
+          <input type="radio" id="on" name="music" />
+          <label for="on" onclick="on()">Music On </label> </span
+        ><br />
+        <span onclick="off()">
+          <input type="radio" id="off" name="music" />
+          <label for="off" onclick="off()">Music off </label><br />
+        </span>
+      </div>
+      <button id="backbtn" style="display: none" onclick="backFunction()">
+        BACK
+      </button>
+    </div>
+  </body>
 </html>
