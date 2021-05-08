@@ -1,91 +1,103 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Lettertyping</title>
-    <style>
-      * {
-        margin: 0%;
-        padding: 0%;
-      }
 
-      #letter {
-        margin: 0 auto;
-        border-image: linear-gradient(315deg, #660066 0%, #ff0066 74%);
-        border-image-slice: 1;
-        border-width: 10px;
-        border-style: solid;
-        display: none;
-      }
+<head>
+  <title>Lettertyping</title>
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+    }
 
-      .btn {
-        height: 50px;
-        width: 150px;
-        position: relative;
-        top: 200px;
-        color: white;
-        background: #dadce000;
-        border-color: white;
-        box-shadow: 1px 1px 9px 2px pink;
-      }
+    #letter {
+      margin: 0 auto;
+      border-image: linear-gradient(315deg, #660066 0%, #ff0066 74%);
+      border-image-slice: 1;
+      border-width: 10px;
+      border-style: solid;
+      display: none;
+    }
 
-      #help-text {
-        display: none;
-        color: white;
-      }
+    .btn {
+      height: 50px;
+      width: 150px;
+      position: relative;
+      top: 200px;
+      color: white;
+      background: #dadce000;
+      border-color: white;
+      box-shadow: 1px 1px 9px 2px pink;
+    }
 
-      #backbtn {
-        position: relative;
-        left: 500px;
-      }
+    #help-text {
+      display: none;
+      color: white;
+      position: relative;
+      top: 180px;
+      left: 300px;
+      width: 50%;
+      text-align: justify;
+      font-family: Comic Sans MS;
+    }
 
-      #music-on-off {
-        display: none;
-      }
-    </style>
-  </head>
+    #backbtn {
+      position: relative;
+      left: 600px;
+      top: 230px;
+    }
 
-  <body style="text-align: center">
-    <h1 id="time" style="display: none">Balance time:00</h1>
-    <canvas id="letter" width="300" height="450"></canvas>
-    <h1 id="points" style="display: none">points : 0</h1>
-    <script src="script.js"></script>
-    <div
-      id="homepage"
-      style="
+    #music-on-off {
+      display: none;
+      position: relative;
+      top: 200px;
+    }
+  </style>
+</head>
+
+<body style="text-align: center">
+  <h1 id="time" style="display: none">Balance time:00</h1>
+  <canvas id="letter" width="300" height="450"></canvas>
+  <h1 id="points" style="display: none">points : 0</h1>
+  <script src="script.js"></script>
+  <div id="homepage" style="
         background-image: url(./background.png);
         height: 610px;
         width: 100%;
-      "
-    >
-      <div id="btn-div">
-        <button id="start" onclick="gamestart()" class="btn">START</button
-        ><br /><br />
-        <button id="help" onclick="helpText()" class="btn">HELP</button><br />
-        <br />
-        <button id="sound" onclick="startMusic()" class="btn">SOUND</button>
-      </div>
-      <p id="help-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-        distinctio nemo nisi sequi a eligendi, labore adipisci asperiores eum
-        esse in, officiis officia iusto minima repellendus doloremque, corrupti
-        corporis! Officiis?
-      </p>
-      <audio autoplay loop="loop" id="background-music">
-        <source src="./Moonlightsonata.mp3" type="audio/mp3" />
-      </audio>
-      <div id="music-on-off">
-        <span onclick="on()">
-          <input type="radio" id="on" name="music" />
-          <label for="on" onclick="on()">Music On </label> </span
-        ><br />
-        <span onclick="off()">
-          <input type="radio" id="off" name="music" />
-          <label for="off" onclick="off()">Music off </label><br />
-        </span>
-      </div>
-      <button id="backbtn" style="display: none" onclick="backFunction()">
-        BACK
-      </button>
+      ">
+    <div id="btn-div">
+      <button id="start" onclick="gamestart()" class="btn">START</button><br /><br />
+      <button id="help" onclick="helpText()" class="btn">HELP</button><br />
+      <br />
+      <button id="sound" onclick="startMusic()" class="btn">SOUND</button>
     </div>
-  </body>
+    <div id="help-text">
+      <h1 style="text-align: center;">Help</h1>
+      <br>
+      <p>As letters drop you need to type them.</p>
+      <p> When you type a letter a laser will be shoot to the letter and the letter will disappear. After which
+        your points will increase.</p>
+      <p> As time reduces the speed will also increase
+        and more letter boxes will also start falling.</p>
+      <p> To score the heighest
+        points try typing all the letters that are droping in the given time.</p>
+      Improve your typing speed and at the same time have fun ;)</p>
+    </div>
+    <audio autoplay loop="loop" id="background-music">
+      <source src="./Moonlightsonata.mp3" type="audio/mp3" />
+    </audio>
+    <div id="music-on-off">
+      <span onclick="on()">
+        <input type="radio" id="on" name="music" />
+        <label for="on" onclick="on()">Music On </label> </span><br />
+      <span onclick="off()">
+        <input type="radio" id="off" name="music" checked />
+        <label for="off" onclick="off()">Music off </label><br />
+      </span>
+    </div>
+    <button id="backbtn" style="display: none" onclick="backFunction()">
+      BACK
+    </button>
+  </div>
+</body>
+
 </html>
